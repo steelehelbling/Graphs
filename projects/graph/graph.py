@@ -69,14 +69,14 @@ class Graph:
         """
         visited = set()
 
-        def helper(starting_vertex):
+        def inner_recursive(starting_vertex):
             if starting_vertex not in visited:
                 print(starting_vertex)
                 visited.add(starting_vertex)
                 for neighbor in self.get_neighbors(starting_vertex):
-                    helper(neighbor)
+                    inner_recursive(neighbor)
 
-        helper(starting_vertex)
+        inner_recursive(starting_vertex)
 
     def bfs(self, starting_vertex, destination_vertex):
         """
